@@ -10,6 +10,7 @@ interface Props {
   align?: string;
   textAlign?: boolean;
   fw?: FontWeight;
+  ff?: "regular" | "bold" | "medium";
 }
 
 type FontWeight =
@@ -104,4 +105,5 @@ export const T14BOLD = styled.Text<Props>`
 export const SText = styled(Subhead)<Props>`
   font-size: ${({ fz }) => (fz ? perfectSize(fz) : perfectSize(16))}px;
   font-weight: ${({ fw }) => fw || "normal"};
+  font-family: ${({ ff }) => ff || "regular"};
 `;
