@@ -19,15 +19,17 @@ interface Props {
   bg?: string;
   br?: number;
   fix?: boolean;
+  bw?: number;
+  bc?: string;
 }
 
 export const Stack = styled.View<Props>`
-  width: ${(p) =>
-    p.fix && p.width
-      ? p.width + "px"
-      : typeof p.width === "string"
-      ? p.width
-      : perfectSize(p.width) || "auto"};
+  width: ${({ width, fix }) =>
+    fix && width
+      ? width + "px"
+      : typeof width === "string"
+      ? width
+      : perfectSize(width) || "auto"};
   height: ${(p) =>
     p.fix && p.height
       ? p.height + "px"
@@ -44,6 +46,7 @@ export const Stack = styled.View<Props>`
   padding-left: ${(p) => perfectSize(p.pl) || 0}px;
   padding-right: ${(p) => perfectSize(p.pr) || 0}px;
   flex-wrap: ${(p) => (p.wrap ? "wrap" : "nowrap")};
+  border: ${({ bc, bw }) => (bw ? `${bw}px solid ${bc}` : "none")}
   background-color: ${(p) => p.bg || "transparent"};
   border-radius: ${({ br }) => perfectSize(br) || 0}px;
 `;
@@ -72,5 +75,6 @@ export const TouchableStack = styled.TouchableOpacity<Props>`
   padding-right: ${(p) => perfectSize(p.pr) || 0}px;
   flex-wrap: ${(p) => (p.wrap ? "wrap" : "nowrap")};
   background-color: ${(p) => p.bg || "transparent"};
+  border: ${({ bc, bw }) => (bw ? `${bw}px solid ${bc}` : "none")}
   border-radius: ${({ br }) => perfectSize(br) || 0}px;
 `;
