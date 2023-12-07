@@ -51,7 +51,7 @@ export const Stack = styled.View<Props>`
 	border: ${({ bc, bw }) => (bw ? `${bw}px solid ${bc}` : 'none')};
 	background-color: ${p => p.bg || 'transparent'};
 	border-radius: ${({ br }) => perfectSize(br) || 0}px;
-	padding: ${({ pd }) => perfectSize(pd) || 0}px;
+	//padding: ${({ pd }) => perfectSize(pd) || 0}px;
 `
 
 export const TouchableStack = styled.TouchableOpacity<Props>`
