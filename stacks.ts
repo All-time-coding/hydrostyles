@@ -21,7 +21,7 @@ interface Props {
 	fix?: boolean
 	bw?: number
 	bc?: string
-	pd?: number
+	//pd?: number
 }
 
 export const Stack = styled.View<Props>`
@@ -81,5 +81,5 @@ export const TouchableStack = styled.TouchableOpacity<Props>`
   background-color: ${p => p.bg || 'transparent'};
   border: ${({ bc, bw }) => (bw ? `${bw}px solid ${bc}` : 'none')}
   border-radius: ${({ br }) => perfectSize(br) || 0}px;
-  padding: ${({ pd }) => perfectSize(pd) || 0}px;
+  //padding: ${({ pd }) => perfectSize(pd) || 0}px;
 `
